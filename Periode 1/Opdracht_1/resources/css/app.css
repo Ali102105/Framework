@@ -1,0 +1,715 @@
+@import 'tailwindcss';
+
+@source '../../vendor/laravel/framework/src/Illuminate/Pagination/resources/views/*.blade.php';
+@source '../../storage/framework/views/*.php';
+
+@theme {
+    --font-sans: 'Instrument Sans', ui-sans-serif, system-ui, sans-serif, 'Apple Color Emoji', 'Segoe UI Emoji',
+        'Segoe UI Symbol', 'Noto Color Emoji';
+}
+
+
+* {
+    box-sizing: border-box;
+}
+
+body {
+    margin: 0;
+    font-family: Arial, sans-serif;
+    background-color: #f5f6f8;
+    color: #222;
+}
+
+/* HEADER */
+header {
+    background-color: #171717;
+    color: white;
+    padding: 20px 0;
+}
+
+.container {
+    width: 90%;
+    max-width: 1100px;
+    margin: 0 auto;
+}
+
+header h1 {
+    margin: 0;
+    font-size: 24px;
+}
+
+/* MAIN */
+main {
+    padding: 60px 0;
+}
+
+/* CARD */
+.card {
+    background-color: white;
+    border: 1px solid #ddd;
+    border-radius: 10px;
+    padding: 30px;
+    max-width: 750px;
+    margin: 0 auto;
+}
+
+.card h1 {
+    margin-top: 0;
+    margin-bottom: 25px;
+}
+
+/* CATEGORY LIST */
+.list {
+    list-style: none;
+    padding: 0;
+    margin: 0;
+}
+
+.list-item {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+
+    padding: 18px 0;
+    border-bottom: 1px solid #eee;
+}
+
+.list-item:last-child {
+    border-bottom: none;
+}
+
+.list-item-title {
+    font-size: 18px;
+    font-weight: bold;
+}
+
+/* BUTTONS */
+.btn {
+    display: inline-block;
+    background-color: #171717;
+    color: white;
+    padding: 11px 20px;
+    border: none;
+    border-radius: 6px;
+
+    text-decoration: none;
+    font-size: 15px;
+    cursor: pointer;
+}
+
+.btn:hover {
+    background-color: #333;
+}
+
+.btn-secondary {
+    background-color: #6c757d;
+}
+
+/* FORM */
+.form-group {
+    margin-bottom: 25px;
+}
+
+.form-label {
+    display: block;
+    font-weight: bold;
+    margin-bottom: 8px;
+}
+
+.form-input {
+    width: 100%;
+    padding: 12px;
+
+    border: 1px solid #ccc;
+    border-radius: 6px;
+
+    font-size: 16px;
+}
+
+.form-input:focus {
+    outline: none;
+    border-color: #171717;
+}
+
+.form-actions {
+    display: flex;
+    gap: 10px;
+    margin-top: 25px;
+}
+
+.item {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+
+    padding: 20px 0;
+    border-bottom: 1px solid #e5e5e5;
+}
+
+.item:last-child {
+    border-bottom: none;
+}
+
+.item-info h3 {
+    margin: 0 0 6px;
+    font-size: 18px;
+}
+
+.item-info p {
+    margin: 0;
+    color: #555;
+}
+
+.btn {
+    background: #111;
+    color: white;
+    padding: 12px 22px;
+    border-radius: 6px;
+    text-decoration: none;
+    margin-bottom: 25px;
+}
+
+.btn:hover {
+    background: #333;
+}
+
+
+/* MODAL */
+.modal {
+    position: fixed;
+    inset: 0;
+    margin: auto;
+    width: 90%;
+    max-width: 450px;
+    max-height: 90vh;
+    padding: 0;
+    border: none;
+    border-radius: 10px;
+    background: white;
+    box-shadow: 0 10px 40px rgba(0, 0, 0, 0.2);
+    overflow-y: auto;
+}
+
+/* Achtergrond wanneer modal open is */
+.modal::backdrop {
+    background: rgba(0, 0, 0, 0.5);
+}
+
+/* Inhoud modal */
+.modal-content {
+    padding: 30px;
+}
+
+/* Bovenkant modal */
+.modal-header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin-bottom: 25px;
+}
+
+.modal-header h2 {
+    margin: 0;
+    font-size: 22px;
+}
+
+/* Sluitknop */
+.modal-close {
+    background: none;
+    border: none;
+    font-size: 28px;
+    cursor: pointer;
+    color: #555;
+}
+
+.modal-close:hover {
+    color: #111;
+}
+
+/* Knoppen onderaan */
+.modal .form-actions {
+    display: flex;
+    justify-content: flex-end;
+    gap: 10px;
+    margin-top: 25px;
+}
+
+.modal .form-actions .btn {
+    margin-bottom: 0;
+}
+
+
+
+/* OVERZICHT PAGINA'S */
+.item {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    gap: 20px;
+    padding: 20px 0;
+    border-bottom: 1px solid #e5e5e5;
+}
+
+.item:last-child {
+    border-bottom: none;
+}
+
+/* INFORMATIE LINKS */
+.item-info {
+    flex: 1;
+    min-width: 0;
+}
+
+.item-info h3 {
+    margin: 0 0 6px;
+    font-size: 18px;
+    overflow-wrap: anywhere;
+}
+
+.item-info p {
+    margin: 0;
+    color: #555;
+    overflow-wrap: anywhere;
+}
+
+/* BEKIJKEN EN VERWIJDEREN */
+.list-actions {
+    display: flex;
+    align-items: center;
+    justify-content: flex-end;
+    gap: 10px;
+    flex-shrink: 0;
+}
+
+.list-actions form {
+    margin: 0;
+}
+
+.list-actions .btn {
+    margin: 0;
+    white-space: nowrap;
+    text-align: center;
+}
+
+/* TOEVOEGEN KNOP */
+.card > .btn {
+    margin-bottom: 25px;
+}
+
+/* MOBIEL */
+@media (max-width: 600px) {
+    .card {
+        padding: 20px;
+        width: 100%;
+    }
+
+    .item {
+        flex-direction: column;
+        align-items: stretch;
+        gap: 15px;
+    }
+
+    .list-actions {
+        width: 100%;
+        justify-content: flex-start;
+        flex-wrap: wrap;
+    }
+
+    .list-actions .btn {
+        margin: 0;
+    }
+}
+
+
+/* NAVBAR */
+.site-header {
+    background: #171717;
+    color: white;
+    padding: 0;
+}
+
+.navbar {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    gap: 25px;
+    min-height: 80px;
+}
+
+/* LOGO */
+.navbar-logo {
+    color: white;
+    font-size: 23px;
+    font-weight: 800;
+    text-decoration: none;
+    white-space: nowrap;
+    letter-spacing: -1px;
+}
+
+.navbar-logo span {
+    color: #a3a3a3;
+}
+
+/* MENU */
+.navbar-menu {
+    display: flex;
+    align-items: center;
+    justify-content: flex-end;
+    gap: 18px;
+    flex-wrap: wrap;
+}
+
+.navbar-menu > a {
+    color: #c7c7c7;
+    text-decoration: none;
+    font-size: 14px;
+    font-weight: 500;
+    padding: 10px 0;
+    transition: color 0.2s;
+}
+
+.navbar-menu > a:hover,
+.navbar-menu > a.active {
+    color: white;
+}
+
+.navbar-menu > a.active {
+    border-bottom: 2px solid white;
+}
+
+/* AUTH */
+.navbar-auth {
+    display: flex;
+    align-items: center;
+    gap: 15px;
+    margin-left: 10px;
+}
+
+.navbar-user {
+    color: #d4d4d4;
+    font-size: 13px;
+    font-weight: 600;
+    white-space: nowrap;
+}
+
+.navbar-auth form {
+    margin: 0;
+}
+
+.navbar-login,
+.navbar-logout {
+    display: inline-block;
+    background: white;
+    color: #171717;
+    border: 1px solid white;
+    padding: 10px 16px;
+    border-radius: 6px;
+    font-size: 13px;
+    font-weight: 700;
+    text-decoration: none;
+    cursor: pointer;
+    white-space: nowrap;
+    transition: 0.2s;
+}
+
+.navbar-login:hover,
+.navbar-logout:hover {
+    background: #e5e5e5;
+    color: #111;
+}
+
+/* HAMBURGER */
+.navbar-toggle {
+    display: none;
+    background: transparent;
+    border: 1px solid #555;
+    color: white;
+    border-radius: 6px;
+    padding: 8px 12px;
+    font-size: 24px;
+    cursor: pointer;
+}
+
+/* RESPONSIVE */
+@media (max-width: 1150px) {
+
+    .navbar {
+        flex-wrap: wrap;
+        padding-top: 15px;
+        padding-bottom: 15px;
+    }
+
+    .navbar-toggle {
+        display: block;
+        margin-left: auto;
+    }
+
+    .navbar-menu {
+        display: none;
+        width: 100%;
+        flex-direction: column;
+        align-items: stretch;
+        gap: 5px;
+        padding-top: 15px;
+        border-top: 1px solid #333;
+    }
+
+    .navbar-menu.open {
+        display: flex;
+    }
+
+    .navbar-menu > a {
+        padding: 12px;
+        border-radius: 5px;
+    }
+
+    .navbar-menu > a:hover,
+    .navbar-menu > a.active {
+        background: #292929;
+        border-bottom: none;
+    }
+
+    .navbar-auth {
+        margin-left: 0;
+        margin-top: 10px;
+        padding-top: 15px;
+        border-top: 1px solid #333;
+        flex-wrap: wrap;
+    }
+}
+
+@media (max-width: 480px) {
+    .navbar-logo {
+        font-size: 20px;
+    }
+
+    .navbar-login,
+    .navbar-logout {
+        padding: 10px 14px;
+    }
+}
+
+
+/* HOMEPAGE */
+
+/* Homepage gebruikt de volledige breedte */
+main:has(.home-hero) {
+    padding: 0;
+}
+
+main:has(.home-hero) > .container {
+    width: 100%;
+    max-width: none;
+    padding: 0;
+}
+
+/* HERO */
+.home-hero {
+    background: #252525;
+    color: white;
+    text-align: center;
+    padding: 90px 20px;
+}
+
+.home-hero-content {
+    max-width: 850px;
+    margin: 0 auto;
+}
+
+.home-label {
+    display: inline-block;
+    color: #aaa;
+    font-size: 12px;
+    letter-spacing: 3px;
+    font-weight: bold;
+    margin-bottom: 18px;
+}
+
+.home-hero h1 {
+    font-size: clamp(30px, 4vw, 46px);
+    line-height: 1.2;
+    margin: 0 0 20px;
+    font-weight: 700;
+}
+
+.home-hero p {
+    color: #ccc;
+    font-size: 17px;
+    line-height: 1.7;
+    max-width: 650px;
+    margin: 0 auto 30px;
+}
+
+.home-hero-actions {
+    display: flex;
+    justify-content: center;
+}
+
+.home-primary-btn {
+    display: inline-block;
+    background: white;
+    color: #171717;
+    padding: 14px 25px;
+    border-radius: 7px;
+    text-decoration: none;
+    font-size: 15px;
+    font-weight: bold;
+    transition: 0.2s;
+}
+
+.home-primary-btn:hover {
+    background: #e5e5e5;
+    transform: translateY(-2px);
+}
+
+/* OVERZICHT */
+.home-overview {
+    max-width: 1100px;
+    margin: 0 auto;
+    padding: 70px 20px 90px;
+}
+
+.home-section-header {
+    text-align: center;
+    margin-bottom: 40px;
+}
+
+.home-label-dark {
+    color: #888;
+    font-size: 12px;
+    letter-spacing: 3px;
+    font-weight: bold;
+}
+
+.home-section-header h2 {
+    font-size: 32px;
+    margin: 12px 0;
+}
+
+.home-section-header p {
+    color: #777;
+    font-size: 15px;
+}
+
+/* DASHBOARD CARDS */
+.home-cards {
+    display: grid;
+    grid-template-columns: repeat(4, minmax(0, 1fr));
+    gap: 20px;
+}
+
+.home-card {
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
+    background: white;
+    border: 1px solid #e2e2e2;
+    border-radius: 12px;
+    padding: 27px;
+    min-height: 220px;
+    text-decoration: none;
+    color: #222;
+    transition: 0.2s;
+}
+
+.home-card:hover {
+    transform: translateY(-5px);
+    border-color: #aaa;
+    box-shadow: 0 10px 25px rgba(0, 0, 0, 0.07);
+}
+
+.home-card-icon {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    width: 46px;
+    height: 46px;
+    background: #f3f3f3;
+    border-radius: 10px;
+    font-size: 23px;
+    margin-bottom: 20px;
+}
+
+.home-card h3 {
+    font-size: 18px;
+    margin: 0 0 10px;
+}
+
+.home-card p {
+    color: #777;
+    font-size: 14px;
+    line-height: 1.6;
+    margin: 0 0 20px;
+}
+
+.home-card-link {
+    margin-top: auto;
+    font-size: 14px;
+    font-weight: bold;
+    color: #171717;
+}
+
+/* NIET INGELOGD */
+.home-guest {
+    background: white;
+    border: 1px solid #ddd;
+    border-radius: 12px;
+    padding: 45px 25px;
+    text-align: center;
+    max-width: 550px;
+    margin: 0 auto;
+}
+
+.home-guest h3 {
+    margin-top: 0;
+    font-size: 23px;
+}
+
+.home-guest p {
+    color: #777;
+    line-height: 1.7;
+    margin-bottom: 25px;
+}
+
+.home-guest .home-primary-btn {
+    background: #171717;
+    color: white;
+}
+
+.home-guest .home-primary-btn:hover {
+    background: #333;
+}
+
+/* TABLET */
+@media (max-width: 900px) {
+    .home-cards {
+        grid-template-columns: repeat(2, minmax(0, 1fr));
+    }
+
+    .home-hero {
+        padding: 70px 20px;
+    }
+}
+
+/* MOBIEL */
+@media (max-width: 550px) {
+    .home-cards {
+        grid-template-columns: 1fr;
+    }
+
+    .home-overview {
+        padding: 45px 16px 60px;
+    }
+
+    .home-card {
+        min-height: 190px;
+    }
+
+    .home-hero {
+        padding: 60px 20px;
+    }
+
+    .home-hero p {
+        font-size: 15px;
+    }
+}
